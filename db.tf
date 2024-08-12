@@ -10,5 +10,4 @@ resource "azurerm_mysql_flexible_server" "this_sql_fs" {
   private_dns_zone_id    = azurerm_private_dns_zone.this_dns.id
   sku_name               = "GP_Standard_D2ds_v4"
 
-  depends_on = [azurerm_private_dns_zone_virtual_network_link.example]
 }
