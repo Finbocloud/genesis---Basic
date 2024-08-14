@@ -20,11 +20,28 @@ variable "vnet-name" {
 variable "subnet-name"{
     type = string
     default = "subnet-genesis"
-    description = "gensis subnet"
+    description = "genesis subnet"
 }
-variable "this_sql_fs-name" {
+variable "flexible-server-name" {
   type = string
-  default = "this_sql_fs-geneis"
+  default = "genesis-fs-server"
   description = "genesis fs"
+}
+variable "flexible-server-username" {
+  type = string
+  default = "psqladmin"
 
 }
+variable "flexible-server-password" {
+  type = string
+  default = "H@Sh1CoR3!"
+
+}
+variable "flexible-server-db-name" {
+type = string 
+default= "genesis-fs-server-db"
+description = "genesis fs db"
+}
+
+  
+
