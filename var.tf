@@ -42,6 +42,12 @@ type = string
 default= "genesis-fs-server-db"
 description = "genesis fs db"
 }
+variable "nsg-name" {
+type = string
+default = "nsg-genesis"
+description = "genesis-nsg"
+
+}
 
   
 
