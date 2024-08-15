@@ -1,21 +1,5 @@
-provider "azurerm" {
-  features {
-    key_vault {
-      purge_soft_delete_on_destroy    = true
-      recover_soft_deleted_key_vaults = true
-    }
-  }
-}
-
-data "azurerm_client_config" "current" {}
-
-resource "azurerm_resource_group" "this_rg" {
-  name     = "this-rg"
-  location = "uk south"
-}
-
-resource "azurerm_key_vault" "example" {
-  name                        = "this-keyvault"
+resource "azurerm_key_vault" "this_keyvault" {
+  name                        = "ray-keyvault"
   location                    = azurerm_resource_group.this_rg.location
   resource_group_name         = azurerm_resource_group.this_rg.name
   enabled_for_disk_encryption = true
