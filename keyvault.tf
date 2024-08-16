@@ -1,5 +1,5 @@
 resource "azurerm_key_vault" "this_keyvault" {
-  name                        = "ray-keyvault"
+  name                        = var.keyvault-name
   location                    = azurerm_resource_group.this_rg.location
   resource_group_name         = azurerm_resource_group.this_rg.name
   enabled_for_disk_encryption = true

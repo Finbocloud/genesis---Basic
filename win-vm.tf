@@ -1,17 +1,17 @@
 resource "azurerm_network_interface" "this_nic" {
-  name                = "ray-nic"
+  name                = var.windows-nic-name
   location            = azurerm_resource_group.this_rg.location
   resource_group_name = azurerm_resource_group.this_rg.name
 
   ip_configuration {
-    name                          = "genesis nic"
+    name                          = var.windows-nic-name
     subnet_id                     = azurerm_subnet.this_subnet.id
     private_ip_address_allocation = "Dynamic"
   }
 }
 
 resource "azurerm_windows_virtual_machine" "this_vm" {
-  name                = "ray-vm"
+  name                = var.windows-nic-name
   resource_group_name = azurerm_resource_group.this_rg.name
   location            = azurerm_resource_group.this_.location
   size                = "Standard_F2"

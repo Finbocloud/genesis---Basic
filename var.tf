@@ -66,3 +66,8 @@ variable "keyvault-name" {
   default = "genesis-kv"
   description = "genesis-kv"
 }
+variable "windows-nic-name" {
+  type = string
+  default = "genesis-win-nic"
+  description = "genesis-win-nic"
+}
