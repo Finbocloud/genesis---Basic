@@ -1,5 +1,8 @@
+data "azurerm_client_config" "current" {
+  
+}
 resource "azurerm_key_vault" "this_keyvault" {
-  name                        = "my-keyvault"
+  name                        = var.keyvault-name
   location                    = azurerm_resource_group.this_rg.location
   resource_group_name         = azurerm_resource_group.this_rg.name
   enabled_for_disk_encryption = true
@@ -11,18 +14,29 @@ resource "azurerm_key_vault" "this_keyvault" {
 
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = data.azurerm_client_config.current.object_id
-
-    key_permissions = [
-      "Get",
-    ]
+    object_id = "a136a3eb-0f79-4988-bfd3-cac5a070fe2b"
 
     secret_permissions = [
-      "Get",
+      "Get", "Set", "Delete", "List" 
     ]
 
-    storage_permissions = [
-      "Get",
-    ]
   }
+  access_policy {
+    tenant_id = data.azurerm_client_config.current.tenant_id
+    object_id = "ad5bcdab-0128-4db1-8576-e910ee17d3a2"
+
+    secret_permissions = [
+      "Get", "Set", "Delete", "List" 
+    ]
+}
+}
+resource "azurerm_key_vault_secret" "this_win_password" {
+  name         = "windows-password"
+  value        = var.windows-vm-password
+  key_vault_id = azurerm_key_vault.this_keyvault.id
+}
+resource "azurerm_key_vault_secret" "this_db_password" {
+  name         = "db-password"
+  value        = var.flexible-server-password
+  key_vault_id = azurerm_key_vault.this_keyvault.id
 }
