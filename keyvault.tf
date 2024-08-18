@@ -1,5 +1,9 @@
 resource "azurerm_key_vault" "this_keyvault" {
+<<<<<<< HEAD
   name                        = "my-keyvault"
+=======
+  name                        = var.keyvault-name
+>>>>>>> 73482a134bf03751f27b2ba7c81fddde85bdd2f4
   location                    = azurerm_resource_group.this_rg.location
   resource_group_name         = azurerm_resource_group.this_rg.name
   enabled_for_disk_encryption = true

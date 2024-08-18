@@ -48,6 +48,26 @@ default = "nsg-genesis"
 description = "genesis-nsg"
 
 }
-
-  
-
+variable "windows-vm-name" {
+  type = string
+  default = "genesis-win-vm"
+  description = "genesis-win-vm"
+}
+  variable "windows-vm-username"{
+    type = string
+    default = "azureuser"
+  }
+variable "windows-vm-password" {
+  type = string
+  default = "Azure123!"
+}
+variable "keyvault-name" {
+  type = string
+  default = "genesis-kv"
+  description = "genesis-kv"
+}
+variable "windows-nic-name" {
+  type = string
+  default = "genesis-win-nic"
+  description = "genesis-win-nic"
+}
