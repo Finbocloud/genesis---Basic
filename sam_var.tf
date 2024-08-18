@@ -24,7 +24,7 @@ variable "subnet-name"{
 
 variable "flexible-server-name" {
   type = string
-  default = "genesis-flx-server"
+  default = "fs-server-genesis"
   description = "genesis fs name"
 }
 
@@ -42,7 +42,7 @@ variable "flexible-server-password" {
 }
 variable "flexible-server-db-name" {
 type = string 
-default= "genesis-flx-server-db"
+default= "fs-server-db-genesis"
 description = "genesis fs db name"
 }
 
