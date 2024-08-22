@@ -14,7 +14,7 @@ resource "azurerm_key_vault" "this_keyvault" {
 
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = "a136a3eb-0f79-4988-bfd3-cac5a070fe2b"
+    object_id = "51728fed-3227-4536-ba41-8f81e7740222"
 
     secret_permissions = [
       "Get", "Set", "Delete", "List" 
@@ -23,7 +23,7 @@ resource "azurerm_key_vault" "this_keyvault" {
   }
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = "ad5bcdab-0128-4db1-8576-e910ee17d3a2"
+    object_id = "98b4f863-59fb-4c6b-a40b-7be3620e4c8b"
 
     secret_permissions = [
       "Get", "Set", "Delete", "List" 

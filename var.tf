@@ -63,7 +63,7 @@ variable "windows-vm-password" {
 }
 variable "keyvault-name" {
   type = string
-  default = "genesis-kv81"
+  default = "genesis-kv8109"
   description = "genesis-kv"
 }
 variable "windows-nic-name" {
