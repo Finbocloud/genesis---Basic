@@ -10,9 +10,11 @@ stages:
       - job: terraform
         steps:
         - task: TerraformInstaller@1
+          displayName: terraformInstall
           inputs:
             terraformVersion: '1.4.6'
         - task: TerraformTaskV4@4
+          displayName: terraformInit
           inputs:
             provider: 'azurerm'
             command: 'init'
@@ -22,6 +24,7 @@ stages:
             backendAzureRmContainerName: 'terraformstatefile'
             backendAzureRmKey: 'test.tfstate'
         - task: TerraformTaskV4@4
+          displayName: terrafomValidate
           inputs:
             provider: 'azurerm'
             command: 'validate'
